@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my wifey?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336;
+            border: none;
+            color: white;
+        }
+        @keyframes spreadHearts {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(2);
+            }
+        }
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my wifey?</h1>
+    <button id="yesBtn" onclick="celebrate()">YES</button>
+    <button id="noBtn" onclick="fluff()">NO</button>
+    
+    <script>
+        let yesBtnFontSize = 24; // Initial font size of the YES button
+
+        function celebrate() {
+            const gifUrl = "gif1.gif";
+            showFullscreenGif(gifUrl);
+        }
+
+        function showFullscreenGif(gifUrl) {
+            const img = document.createElement("img");
+            img.src = gifUrl;
+            img.classList.add("fullscreen");
+            document.body.appendChild(img);
+        }
+
+        function fluff() {
+            yesBtnFontSize += 2; // Increase font size of YES button
+            document.getElementById("yesBtn").style.fontSize = yesBtnFontSize + "2px";
+        }
+    </script>
+</body>
+</html>
